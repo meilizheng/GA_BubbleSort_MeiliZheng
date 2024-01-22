@@ -82,3 +82,35 @@
         }
     }
 }
+
+
+
+////BubbleSort(arr):
+//// Input: Array of comparable elements
+//// Output: Sorted array in ascending order
+
+//// Initialize a flag to track swaps
+//hasSwapped = true
+
+//    // Repeat until no more swaps are needed
+//    while hasSwapped:
+//        // Reset swap flag for each iteration
+//        hasSwapped = false
+
+//        // Iterate through the array
+//        for i from 0 to length(arr) - 1:
+//            // Compare adjacent elements
+//            if arr[i] > arr[j]:
+//                // Swap elements if they are in the wrong order
+//                swap(arr[i], arr[j])
+//                // Set the flag to indicate a swap has occurred
+//                hasSwapped = true
+
+//    // The array is now sorted
+//    return arr
+
+//// Example Usage:
+//arr = RandomArray()
+//Unsorted Random Array: Display arr
+//BubbleSort(arr)
+//Sorted Array: Display arr
