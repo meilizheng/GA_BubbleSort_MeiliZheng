@@ -1,10 +1,84 @@
 ﻿namespace GA_BubbleSort_MeiliZheng
 {
-    internal class Program
+    public class Program
     {
+        // Declare variables
+        static Random rand = new Random();
+        static int minNum = 1;
+        static int maxNum = 101;
+        static int arrayLength = 10;
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            // Call BubbleSort method             
+            BubbleSort(RandomArray());
+        }
+        static int[] RandomArray()
+        {
+            // Validate array length and range
+            if (arrayLength <= 0 || minNum > maxNum)
+            {
+                throw new ArgumentException("Invalid arguments");
+            }
+
+            // Create a new int array with size 10
+            int[] array = new int[arrayLength];
+
+            // Generate random numbers and fill the array
+            for (int i = 0; i < arrayLength; i++)
+            {
+                array[i] = rand.Next(minNum, maxNum);
+            }
+
+            // Display the unsorted random int array
+            Console.WriteLine("Unsorted Random Array:");
+            foreach (int num in array)
+            {
+                Console.WriteLine(num);
+            }
+            return array;
+        }
+
+        // BubbleSort Method
+        public static void BubbleSort(int[] arr)
+        {
+            bool hasSwapped = false;
+
+            // Bubble Sort Algorithm
+            // Iterate through the array multiple times until no more swaps are needed
+            for (int i = 0; i < arr.Length - 1; i++)
+            {
+                // Flag to track whether any swaps occurred during this iteration
+                hasSwapped = false;
+
+                // Iterate through the array, comparing and swapping adjacent elements
+                for (int j = i; j < arr.Length; j++)
+                {
+                    // If the current element is greater than the next one, swap them
+                    if (arr[i] > arr[j])
+                    {
+                        int temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                        // Set the flag to indicate a swap has occurred
+                        hasSwapped = true;
+                    }
+                }
+            }
+
+            // If no swaps occurred during this iteration, the array is already sorted
+            if (!hasSwapped)
+            {
+                return;
+            }
+
+            // Print the sorted array        
+            Console.WriteLine("Sorted Array:");
+            foreach (int num in arr)
+            {
+                Console.WriteLine(num);                
+            }
+            Console.ReadKey();
         }
     }
 }
